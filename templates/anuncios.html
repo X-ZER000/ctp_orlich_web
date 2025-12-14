@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Anuncios | CTP Francisco J. Orlich</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <div id="menu"></div>
+
+        <script>
+            fetch("{{ url_for('static', filename='menu.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("menu").innerHTML = data;
+                });
+        </script>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="pagina">
+        <h1>Anuncios y Comunicados</h1>
+
+        <section class="bloque">
+            <h2>Bienvenidos</h2>
+            <p>
+                En esta sección se publicarán avisos importantes,
+                comunicados oficiales, fechas relevantes y noticias
+                del CTP Francisco J. Orlich.
+            </p>
+        </section>
+
+        <section class="bloque">
+            <h2>Próximamente</h2>
+            <p>
+                Los anuncios se actualizarán conforme se vayan publicando
+                nuevas informaciones institucionales.
+            </p>
+        </section>
+    </main>
+
+    <!--Flooter-->
+    <footer>
+        <div id="footer"></div>
+        <script>
+            fetch("{{ url_for('static', filename='footer.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
+    </footer>
+
+</body>
+</html>

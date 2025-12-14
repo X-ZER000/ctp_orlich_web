@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!--Aquí se colocara el logo del Cole para que se vea en el buscador -->
+    <!--<img src="/static/img/logo.png" alt="Logo CTP Orlich"> -->
+
+    <title>CTP Francisco J Orlich : colegio técnico de Sarchí</title>
+    <meta name="description" content="Sitio web oficial del colegio técnico de Sarchi, el CTP Francisco J Orlich">
+    <meta name="author" content="Ana Belén Ulate Céspedes">
+    <meta name="copyright" content="CTP Francisco J Orlich">
+    <meta name="meta tag" content="Información sobre el colegio Profecional Francisco José Orlich">
+    <meta name="robots" content="none">
+
+    <!-- Conectamos el CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <!--Aqui va una imagen que cubra el largo completo de la pantalla con la frase "Artesanos somos entre libros"-->
+    <div class="Bloque_imagen">
+        <!--Imagen principal irá en Version 3 -->
+    </div>
+    <!--Pequeña bienvenida a la página web-->
+    <div class="Bienvenida">
+        <h1>
+            Colegio Técnico Profecional Francisco José Orlich
+        </h1>
+        <p>
+            Te damos una <span>Bienvenida</span> a nuestra página web, estamos para servirle
+        </p>
+    </div>
+
+    <!-- Aquí aparece el header donde aparecen las diferentes opciones que tiene el usuario-->
+    
+    <header>
+        <div id="menu"></div>
+
+        <script>
+            fetch("{{ url_for('static', filename='menu.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("menu").innerHTML = data;
+                });
+        </script>
+    </header>
+
+    <!--Contenido-->
+    <main>
+        <!-- Aquí se colocara una tabla donde los profesores avisaran si están ausentes o incapacitados y por cuanto tiempo lo estaran -->
+        <div class="Tabla_Profesores">
+            <!-- Aquí agregaremos la tabla con Flask en Version 2 -->
+        </div>
+    </main>
+
+    <!--Flooter-->
+    <footer>
+        <!-- TODO: Footer mejorado se agregará en Version 3 -->
+        <div id="footer"></div>
+
+        <script>
+            fetch("{{ url_for('static', filename='footer.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
+
+    </footer>
+</body>
+</html>

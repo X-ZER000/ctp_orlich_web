@@ -1,0 +1,136 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración general */
+body {
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    line-height: 1.6;
+}
+
+}
+
+/* Bloque de imagen principal */
+.Bloque_imagen {
+    width: 100%;
+    height: 500px; /* Cambia más adelante */
+    background-color: #d9d9d9; /* Solo temporal */
+}
+
+/* Contenedor principal responsive */
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Contenido estándar para páginas */
+.contenido {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Bienvenida */
+.Bienvenida {
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.Bienvenida h1 {
+    font-size: 2rem;
+    color: #222;
+}
+
+.Bienvenida span {
+    color: #1412a0; 
+    font-weight: bold;
+}
+
+/* Menú superior */
+header {
+    background-color: #333;
+    padding: 10px 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav img {
+    width: 60px;
+    height: 60px;
+    background-color: white; /* Provisional */
+    border-radius: 50%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Tabla de profesores (de momento vacía) */
+
+.Tabla_Profesores {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    margin: 30px 0;
+}
+
+/* Secciones sub páginas */
+
+.pagina {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.pagina h1 {
+    margin-bottom: 30px;
+}
+
+.bloque {
+    margin-bottom: 30px;
+}
+
+.bloque h2 {
+    margin-bottom: 10px;
+}
+
+.submenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.submenu li {
+    padding: 8px 0;
+}
+
+.login-back {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+

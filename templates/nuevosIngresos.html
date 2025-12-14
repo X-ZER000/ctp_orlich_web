@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Nuevos Ingresados | CTP Francisco J. Orlich</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+
+    <!-- Aquí aparece el header donde aparecen las diferentes opciones que tiene el usuario-->
+    
+    <header>
+        <div id="menu"></div>
+
+        <script>
+            fetch("{{ url_for('static', filename='menu.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("menu").innerHTML = data;
+                });
+        </script>
+    </header>
+
+    <!--Contenido-->
+    <main class="contenido">
+        <h1>Nuevos Ingresos</h1>
+
+        <p>
+            Esta sección contiene información importante para estudiantes
+            de nuevo ingreso y sus familias.
+        </p>
+
+        <!-- 🔹 MENÚ INTERNO SOLO PARA ESTA PÁGINA -->
+        <nav class="submenu">
+            <ul>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#admitidos">Estudiantes admitidos</a></li>
+                <li><a href="#becas">Becas (comedor y transporte)</a></li>
+                <li><a href="#resultados">Resultados del examen</a></li>
+            </ul>
+        </nav>
+
+        <!-- Secciones -->
+        <section id="horarios">
+            <h2>Horarios</h2>
+            <p>Los horarios oficiales serán publicados próximamente.</p>
+        </section>
+
+        <section id="admitidos">
+            <h2>Estudiantes admitidos</h2>
+            <p>La lista de estudiantes admitidos se publicará en esta sección.</p>
+        </section>
+
+        <section id="becas">
+            <h2>Becas</h2>
+            <p>Información sobre becas de comedor y transporte.</p>
+        </section>
+
+        <section id="resultados">
+            <h2>Resultados del examen de admisión</h2>
+            <p>Resultados oficiales del proceso de admisión.</p>
+        </section>
+
+    </main>
+
+
+    <!--Flooter-->
+    <footer>
+        <div id="footer"></div>
+        <script>
+            fetch("{{ url_for('static', filename='footer.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
+    </footer>
+
+</body>
+</html>

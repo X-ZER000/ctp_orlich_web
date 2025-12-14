@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Concursos | CTP Francisco J. Orlich</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+
+    <!-- Aquí aparece el header donde aparecen las diferentes opciones que tiene el usuario-->
+    
+    <header>
+        <div id="menu"></div>
+
+        <script>
+            fetch("{{ url_for('static', filename='menu.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("menu").innerHTML = data;
+                });
+        </script>
+    </header>
+
+    <!--Contenido-->
+    <main class="contenido">
+        <h1>Concursos</h1>
+        <p>
+            En esta sección se publicarán los concursos académicos,
+            culturales y técnicos del CTP Francisco J. Orlich.
+        </p>
+        <p>
+            La información será actualizada conforme se abran nuevas convocatorias.
+        </p>
+
+        <!-- Espacio preparado para el futuro -->
+        <section class="lista-concursos">
+            <!-- Aquí irán los concursos dinámicos en la V2 -->
+        </section> 
+    </main>
+
+<!--Flooter-->
+    <footer>
+        <div id="footer"></div>
+        <script>
+            fetch("{{ url_for('static', filename='footer.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
+    </footer>
+
+</body>
+</html>

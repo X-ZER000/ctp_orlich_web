@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso institucional | CTP Francisco J. Orlich</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Menú -->
+    <div id="menu"></div>
+
+    <main class="contenido login-container">
+        <h1>Acceso institucional</h1>
+
+        <p class="login-info">
+            Este acceso es exclusivo para personal administrativo y docente.
+        </p>
+
+        <form class="login-form">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Usuario institucional">
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña">
+
+            <button type="submit" disabled>
+                Ingresar (próximamente)
+            </button>
+        </form>
+
+        <a href="/" class="login-back">
+            ← Volver
+        </a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div id="footer"></div>
+        <script>
+            fetch("{{ url_for('static', filename='footer.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
+    </footer>
+
+</body>
+</html>

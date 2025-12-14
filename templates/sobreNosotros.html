@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Sobre nosotros | CTP Francisco J. Orlich</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+
+    <!-- Aquí aparece el header donde aparecen las diferentes opciones que tiene el usuario-->
+    
+    <header>
+        <div id="menu"></div>
+
+        <script>
+            fetch("{{ url_for('static', filename='menu.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("menu").innerHTML = data;
+                });
+        </script>
+    </header>
+
+    <!--Contenido-->
+    <main>
+        <section class="pagina">
+            <h1>Sobre Nosotros</h1>
+
+            <section class="bloque">
+                <h2>Misión</h2>
+                <p>
+                    <!-- Texto de misión aquí -->
+                </p>
+            </section>
+
+            <section class="bloque">
+                <h2>Visión</h2>
+                <p>
+                    <!-- Texto de visión aquí -->
+                </p>
+            </section>
+
+            <section class="bloque">
+                <h2>Historia</h2>
+                <p>
+                    <!-- Historia del colegio -->
+                </p>
+            </section>
+
+            <section class="bloque">
+                <h2>Especialidades Técnicas</h2>
+                <ul>
+                    <li><!-- Especialidad 1 --></li>
+                    <li><!-- Especialidad 2 --></li>
+                    <li><!-- Especialidad 3 --></li>
+                </ul>
+            </section>
+
+            <section class="bloque">
+                <h2>Talleres</h2>
+                <p>
+                    <!-- Información de talleres -->
+                </p>
+            </section>
+            
+            <section class="bloque">
+                <h2>Certificaciones</h2>
+                <p>
+                    <!-- Certificaciones disponibles -->
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <!--Flooter-->
+    <footer>
+        <div id="footer"></div>
+        <script>
+            fetch("{{ url_for('static', filename='footer.html') }}")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
+    </footer>
+
+</body>
+</html>
